@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Context>
         <Routes>
-          <Route path='/registration' element={<Registration />} />
-          <Route path='/' element={<Login />} />
+          <Route path='/' element={<Registration />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/inputForms' element={<InputForm/>} />
           <Route path='/tasks' element={<Taskmanagement />} />
         </Routes>

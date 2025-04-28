@@ -73,7 +73,7 @@ const Login = () => {
   localStorage.setItem("token", 12345678910);
 alert("Token successfully stored");
 
-   navigate("/creditCard")
+   navigate("/inputForms")
      };
 
   return (
