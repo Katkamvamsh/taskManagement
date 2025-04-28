@@ -25,22 +25,22 @@
 }
 .buttonDelete{
     cursor: pointer;
-    background-color: rgb(234, 0, 255);
+    background-color: rgb(255, 13, 0);
     padding: 10px 32px;
     border-radius: 10px;
     border: 2px solid black;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     font-size: 16px;
     margin-left: 10px;
 }
 .add-more-button{
     cursor: pointer;
-    background-color: rgb(234, 0, 255);
+    background-color: rgb(55, 255, 0);
     padding: 10px 32px;
     border-radius: 10px;
     border: 2px solid black;
-    color: aliceblue;
-    font-size: 19px;
+    color: rgb(14, 15, 16);
+    font-size: 22px;
     margin-left: 10px; 
     margin-top: 50px; 
 }
