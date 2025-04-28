@@ -1,0 +1,43 @@
+.main-container{
+    box-shadow: 2px 2px 12px 2px;
+    padding: 23px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+
+.input{
+    padding: 17px;
+    border: 2px solid blue;
+width:30vw ;
+border-radius: 10px;
+font-size: 16px;
+margin-bottom: 20px;
+}
+.label{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-right: 100px;
+    width: 50px;
+    display: inline-block;
+}
+
+
+.button{
+    padding: 20px;
+    border: 2px solid blue;
+    border-radius:10px ;
+    color: white;
+    font-size: 17px;
+    background-color: blue;
+    width: 10vw;
+}
+.btn-container{
+    display: flex;
+    gap: 110px;
+    justify-content: space-around;
+    margin-top: 50px;
+}

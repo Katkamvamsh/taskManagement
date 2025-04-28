@@ -1,0 +1,98 @@
+.input-main-container{
+    background-color: rgb(248, 249, 249);
+   width: 50vw;
+  padding: 20px 22px;
+    margin: auto;
+   box-shadow: 2px 2px 12px 1px;
+   border-radius: 15px;
+   
+  }
+  .main-heading{
+      text-align: center;
+      margin-top: 50px;
+      color: blue;
+      font-weight: bold;
+      font-family: "Roboto";
+      font-size: 50px;
+  }
+  
+  .input-container{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 40px;
+      width: 50vw;
+    
+    }
+  .input-container label{
+      font-size: 20px;
+      font-family: "Roboto";
+      color: black;
+  }
+  .input-container input{
+      padding: 10px;
+      border: 2px solid blue;
+      border-radius: 10px;
+      margin: 4px 0px 0px 0px;
+      font-size: 25px;
+      width: 30vw;
+      font-family: "Roboto";
+  }
+  .input-container input::placeholder{
+      color: rgb(102, 102, 103);
+      font-size: 16px;
+  }
+  .input-password{
+      position: relative;
+  }
+  .show-password{
+      position: absolute;
+      right: 27%;
+      bottom: 24%;
+      color: rgb(255, 255, 255);
+      font-size: 25px;
+      font-weight: bold;
+      font-family: "Roboto";
+      cursor: pointer;
+  }
+  .register-button{
+      background-color: blueviolet;
+      border-radius: 10px;
+      padding: 12px 20px;
+      border: none;
+      color: black;
+      font-size: 22px;
+      font-family: "Roboto";
+      margin: 10px 0px 10px 0px;
+      cursor: pointer;
+      color: white;
+  }
+  .exist-register-button{
+      background-color: rgb(43, 113, 226);
+      
+  }
+  .input-value{
+      font-size: 15px;
+      font-family: "Roboto";
+  }
+  .error-style{
+      color: red;
+      font-family: "Roboto";
+      font-size: 22px;
+  }
+  
+  .span{
+      color: red;
+      cursor: pointer;
+      font-size: 29px;
+      font-family: "Roboto";
+  }
+  .para{
+      font-size: 25px;
+  }
+  .button-container{
+      display: flex;
+      flex-direction: column;
+      color: white;
+      
+  }
