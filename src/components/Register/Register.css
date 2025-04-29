@@ -47,9 +47,9 @@
   }
   .show-password{
       position: absolute;
-      right: 27%;
-      bottom: 24%;
-      color: rgb(255, 255, 255);
+      right: 33%;
+      top: 40%;
+      color: blue;
       font-size: 25px;
       font-weight: bold;
       font-family: "Roboto";
