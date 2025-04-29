@@ -40,6 +40,8 @@ const Taskmanagementpage = () => {
         placeholder='Search here'
         onChange={inputHandler}
       />
+        <button className='add-more-button' onClick={addMoreTasks}>Add Task</button>
+     
       {tasks.length === 0 ? (
         <p style={{ color: "blue", fontSize: "32px" }}>No tasks added yet.</p>
       ) : (
@@ -63,8 +65,7 @@ const Taskmanagementpage = () => {
               </div>
             </div>
           ))}
-          <button className='add-more-button' onClick={addMoreTasks}>Add more</button>
-        </>
+           </>
       )}
     </div>
   );
