@@ -1,17 +1,17 @@
-import React, { useContext, useState } from 'react'
-import './Taskmanagementpage.css'
+
+import React, { useContext, useState } from 'react';
+import './Taskmanagementpage.css';
 import { TaskContext } from '../Context/Context';
 import { useNavigate } from 'react-router-dom';
 
 const Taskmanagementpage = () => {
-  const navigate = useNavigate()
-  const [input, setInput] = useState("")
-  const { tasks, setTasks } = useContext(TaskContext); 
+  const navigate = useNavigate();
+  const [input, setInput] = useState("");
+  const { tasks, setTasks } = useContext(TaskContext);
 
-  //
   const inputHandler = (event) => {
-    setInput(event.target.value)
-  }
+    setInput(event.target.value);
+  };
 
   const filteredData = tasks.filter((item) => {
     return JSON.stringify(item).toLowerCase().includes(input.toLowerCase());
@@ -19,18 +19,16 @@ const Taskmanagementpage = () => {
 
   const onDeletedTask = (index) => {
     const updatedTasks = tasks.filter((_, taskIndex) => taskIndex !== index);
-   setTasks(updatedTasks);  
-  }
+    setTasks(updatedTasks);
+  };
 
-   // Edit functionality - Navigate to the form and pass the task
-   const toEditForm = (task, index) => {
+  const toEditForm = (task, index) => {
     navigate('/inputForms', { state: { task, index } });
-  }
+  };
 
-  // tis code will move to input forms if user click add more button
-  const addMoreTasks=()=>{
-    navigate('/inputForms')
-  }
+  const addMoreTasks = () => {
+    navigate('/inputForms');
+  };
 
   return (
     <div className='task-container'>
@@ -59,17 +57,16 @@ const Taskmanagementpage = () => {
                 <p>{task.description}</p>
                 <p>{task.status}</p>
                 <div>
-                  <button onClick={() => toEditForm(task,index)} className='buttonEdit'>Edit</button>
+                  <button onClick={() => toEditForm(task, index)} className='buttonEdit'>Edit</button>
                   <button onClick={() => onDeletedTask(index)} className='buttonDelete'>Delete</button>
                 </div>
               </div>
             </div>
           ))}
-            <button className='add-more-button' onClick={addMoreTasks}>Add more</button>
-  
+          <button className='add-more-button' onClick={addMoreTasks}>Add more</button>
         </>
       )}
-      </div>
+    </div>
   );
 };
 

@@ -1,23 +1,44 @@
-import React, { useContext } from 'react';
-import { TaskContext } from '../Context/Context';  // Adjust the relative path accordingly
-import './Inputforms.css'
-import { useNavigate } from 'react-router-dom';
-const InputForm = () => {
-  const navigate=useNavigate()
-  const { inputValue, inputHandler, addTask } = useContext(TaskContext);
 
-const goToTask=()=>{
-navigate('/tasks')
-}
- 
+import React, { useContext, useEffect } from 'react';
+import { TaskContext } from '../Context/Context';
+import './Inputforms.css';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+const InputForm = () => {
+  const navigate = useNavigate();
+
+  const { inputValue, setInputValue, inputHandler, addTask } = useContext(TaskContext);
+  
+  const location = useLocation();
+  const editIndex = location.state?.index;
+  useEffect(() => {
+    if (editIndex !== undefined) {
+      const taskToEdit = location.state?.task;
+      setInputValue({
+        name: taskToEdit.name,
+        description: taskToEdit.description,
+        status: taskToEdit.status
+      });
+    }
+  }, [editIndex, location.state, setInputValue]);
+
+  const handleSubmit = () => {
+    // If editIndex is provided, update the task, otherwise add a new task
+    addTask(editIndex);
+  };
+
+  const goToTask = () => {
+    navigate('/tasks');
+  };
+
   return (
     <div className='main-container'>
-      <h2>Add Task</h2>
+      <h2>{editIndex !== undefined ? 'Edit Task' : 'Add Task'}</h2>
 
-      <div  >
+      <div>
         <label className='label' htmlFor='name'>Name:</label>
         <input
-        className='input'
+          className='input'
           id='name'
           name='name'
           type='text'
@@ -30,7 +51,6 @@ navigate('/tasks')
       <div>
         <label className='label' htmlFor='description'>Description:</label>
         <input
-        
           className='input'
           id='description'
           name='description'
@@ -45,7 +65,7 @@ navigate('/tasks')
         <label className='label' htmlFor='status'>Status:</label>
         <select
           id='status'
-            className='input'
+          className='input'
           name='status'
           value={inputValue.status}
           onChange={inputHandler}
@@ -56,16 +76,15 @@ navigate('/tasks')
           <option value="Reject">Reject</option>
         </select>
       </div>
-<div className='btn-container'>
-<button className='button' onClick={addTask} style={{ marginTop: "10px" }}>
-        Add Task
-      </button>
-      <button className='button' onClick={goToTask} style={{ marginTop: "10px" }}>
-       Go To Task
-      </button>
-</div>
-      
 
+      <div className='btn-container'>
+        <button className='button' onClick={handleSubmit} style={{ marginTop: "10px" }}>
+          {editIndex !== undefined ? 'Update Task' : 'Add Task'}
+        </button>
+        <button className='button' onClick={goToTask} style={{ marginTop: "10px" }}>
+          Go To Task
+        </button>
+      </div>
     </div>
   );
 };
